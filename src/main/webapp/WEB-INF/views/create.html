@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/create" method="post" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td>title:</td>
+            <td>
+                <input placeholder="Nhập title" name="title">
+            </td>
+        </tr>
+        <tr>
+            <td>content:</td>
+            <td><input placeholder="Nhập content" name="content"></td>
+        </tr>
+        <tr>
+            <td>img:</td>
+            <td><input name="fileImg" type="file"></td>
+        </tr>
+        <tr>
+            <td>Category:</td>
+            <td>
+                <select name="category">
+                    <option th:each="c : ${categories}" th:value="${c.getId()}" th:text="${c.getName()}"></option>
+                </select><br>
+            </td>
+            <td></td>
+            <td><input type="submit">Submit</td>
+        </tr>
+
+        </tr>
+    </table>
+</form>
+</body>
+</html>

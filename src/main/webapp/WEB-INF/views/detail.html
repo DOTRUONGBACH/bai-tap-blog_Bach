@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>detail</title>
+</head>
+<body>
+<p>aaaa</p>
+    <div th:object="${blog}" >
+        <img th:src="${blog.getImg()}" width="150" height="50">
+        <p th:text="${blog.getTitle()}"></p>
+        <p th:text="${blog.getContent()}"></p>
+        <p th:text="${blog.getCategory().getName()}"></p>
+
+    <a type="button" class="btn btn-warning" th:href="@{/edit/{id} (id=${blog.id})}">Edit</a>
+    <a type="button" class="btn btn-danger" th:href="@{/delete/{id} (id=${blog.id})}">Delete</a>
+    </div>
+</body>
+</html>
